@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "image": "b1d0a191-06deb55d.jpg",
+    "model": "qwen2.5-7b",
+    "timestamp": "2025-10-16 18:50:32",
+    "duration": {
+      "reused_previous_decision": true,
+      "similarity_S_hat_t": 0.36580726226438176,
+      "remaining_duration_after_this_frame": 7,
+      "C_max_seen": 8.0
+    }
+  },
+  "step1_scene_context_extraction": {
+    "raw": "```json\n{\n  \"environment\": {\n    \"weather\": \"snow\",\n    \"time\": \"day\",\n    \"road\": \"urban intersection\",\n    \"lane\": \"multi-lane\"\n  },\n  \"critical_objects\": [\n    {\n      \"class\": \"pedestrian\",\n      \"bbox\": [\n        715,\n        308,\n        774,\n        410\n      ],\n      \"influence\": \"crossing the road\"\n    },\n    {\n      \"class\": \"pedestrian\",\n      \"bbox\": [\n        829,\n        288,\n        872,\n        414\n      ],\n      \"influence\": \"crossing the road\"\n    },\n    {\n      \"class\": \"pedestrian\",\n      \"bbox\": [\n        956,\n        285,\n        1018,\n        404\n      ],\n      \"influence\": \"crossing the road\"\n    },\n    {\n      \"class\": \"pedestrian\",\n      \"bbox\": [\n        1036,\n        287,\n        1103,\n        406\n      ],\n      \"influence\": \"crossing the road\"\n    }\n  ]\n}\n```",
+    "json": {
+      "environment": {
+        "weather": "snow",
+        "time": "day",
+        "road": "urban intersection",
+        "lane": "multi-lane"
+      },
+      "critical_objects": [
+        {
+          "class": "pedestrian",
+          "bbox": [
+            715,
+            308,
+            774,
+            410
+          ],
+          "influence": "crossing the road"
+        },
+        {
+          "class": "pedestrian",
+          "bbox": [
+            829,
+            288,
+            872,
+            414
+          ],
+          "influence": "crossing the road"
+        },
+        {
+          "class": "pedestrian",
+          "bbox": [
+            956,
+            285,
+            1018,
+            404
+          ],
+          "influence": "crossing the road"
+        },
+        {
+          "class": "pedestrian",
+          "bbox": [
+            1036,
+            287,
+            1103,
+            406
+          ],
+          "influence": "crossing the road"
+        }
+      ]
+    },
+    "tokens": {
+      "input": 2177,
+      "output": 248
+    },
+    "time_sec": 1.2201344966888
+  },
+  "step2_scene_context_scoring": {
+    "raw": "```json\n{\n  \"difficulty\": {\n    \"picked\": {\n      \"ww\": 0.4,\n      \"wt\": 0.1,\n      \"wr\": 0.4,\n      \"wl\": 0.1,\n      \"Ew\": 0.95,\n      \"Et\": 0.3,\n      \"Er\": 0.5,\n      \"El\": 0.7\n    },\n    \"weights\": {\n      \"ww\": 0.4,\n      \"wt\": 0.1,\n      \"wr\": 0.4,\n      \"wl\": 0.1\n    },\n    \"terms\": {\n      \"ww_times_Ew\": 0.38,\n      \"wt_times_Et\": 0.03,\n      \"wr_times_Er\": 0.2,\n      \"wl_times_El\": 0.07\n    },\n    \"D\": 0.68,\n    \"calculation\": \"D = ww*Ew + wt*Et + wr*Er + wl*El = 0.380000 + 0.030000 + 0.200000 + 0.070000 = 0.680000\",\n    \"notes\": \"Snowy conditions and pedestrians crossing the road significantly increase difficulty.\"\n  },\n  \"complexity\": {\n    \"per_object\": [\n      {\n        \"class\": \"pedestrian\",\n        \"p\": 1.0\n      },\n      {\n        \"class\": \"pedestrian\",\n        \"p\": 1.0\n      },\n      {\n        \"class\": \"pedestrian\",\n        \"p\": 1.0\n      },\n      {\n        \"class\": \"pedestrian\",\n        \"p\": 1.0\n      }\n    ],\n    \"N\": 4,\n    \"sum_p\": 4.0,\n    \"alpha\": 1.0,\n    \"beta\": 1.0,\n    \"terms\": {\n      \"alpha_times_N\": 4.0,\n      \"beta_times_sum_p\": 4.0\n    },\n    \"C\": 8.0,\n    \"calculation\": \"C = alpha*N + beta*sum_p = 1.0*4.0 + 1.0*4.0 = 4.0 + 4.0 = 8.0\"\n  },\n  \"reasoning\": \"The presence of multiple pedestrians crossing the road poses a significant near-term driving challenge due to the potential for sudden movements and reduced visibility.\"\n}\n```",
+    "json": {
+      "difficulty": {
+        "picked": {
+          "ww": 0.4,
+          "wt": 0.1,
+          "wr": 0.4,
+          "wl": 0.1,
+          "Ew": 0.95,
+          "Et": 0.3,
+          "Er": 0.5,
+          "El": 0.7
+        },
+        "weights": {
+          "ww": 0.4,
+          "wt": 0.1,
+          "wr": 0.4,
+          "wl": 0.1
+        },
+        "terms": {
+          "ww_times_Ew": 0.38,
+          "wt_times_Et": 0.03,
+          "wr_times_Er": 0.2,
+          "wl_times_El": 0.07
+        },
+        "D": 0.68,
+        "calculation": "D = ww*Ew + wt*Et + wr*Er + wl*El = 0.680000 = 0.680000",
+        "notes": "Snowy conditions and pedestrians crossing the road significantly increase difficulty."
+      },
+      "complexity": {
+        "per_object": [
+          {
+            "class": "pedestrian",
+            "p": 1.0
+          },
+          {
+            "class": "pedestrian",
+            "p": 1.0
+          },
+          {
+            "class": "pedestrian",
+            "p": 1.0
+          },
+          {
+            "class": "pedestrian",
+            "p": 1.0
+          }
+        ],
+        "N": 4,
+        "sum_p": 4.0,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "terms": {
+          "alpha_times_N": 4.0,
+          "beta_times_sum_p": 4.0
+        },
+        "C": 8.0,
+        "calculation": "C = alpha*N + beta*sum_p = 8.000000 = 8.000000 = 8.0"
+      },
+      "reasoning": "The presence of multiple pedestrians crossing the road poses a significant near-term driving challenge due to the potential for sudden movements and reduced visibility."
+    },
+    "tokens": {
+      "input": 3733,
+      "output": 558
+    },
+    "time_sec": 2.692514181137
+  },
+  "step3_scene_aware_decision": {
+    "raw": "[Adaptive Duration: Step 3 (Scene-aware Decision) skipped this frame, model reused from prior decision]",
+    "json": {
+      "audit": {
+        "D": 0.62,
+        "C": 0.0,
+        "weather_key": "Snow",
+        "scene_key": "Downtown",
+        "R": 0.372,
+        "C_min": 0.66488,
+        "C_max": 0.76116,
+        "L_budget_ms": 311.6,
+        "used_mode": "IN_BAND",
+        "shortlist_detail": [
+          {
+            "model": "RT-DETR-L",
+            "latency": 52.1,
+            "mAP": 0.682,
+            "confidence": 0.7461319118738174
+          }
+        ]
+      },
+      "policy": {
+        "K": 1,
+        "candidates": [
+          "RT-DETR-L"
+        ],
+        "Final model": "RT-DETR-L",
+        "_rl_signature": [
+          "Snow",
+          "Downtown",
+          "<= 1.0",
+          "<= 12.0",
+          "<= 0.6",
+          "<= 0.72",
+          "<= 0.8",
+          "<= 500"
+        ],
+        "_execution": {
+          "model": "RT-DETR-L",
+          "confidence": 0.8202019058741056,
+          "latency_ms": 114.86101150512695,
+          "reward": 1.0,
+          "latency_penalty": 0.0,
+          "num_detections": 13,
+          "backend": "transformers",
+          "device": "cuda",
+          "learned_confidence_profile": 0.8202019058741056,
+          "annotated_frame": "output_frames/b1d0a191-06deb55d_RT-DETR-L.jpg"
+        },
+        "_rl_debug_Q": {
+          "{\"sig\": [\"Snow\", \"Downtown\", \"<= 1.0\", \"<= 12.0\", \"<= 0.6\", \"<= 0.72\", \"<= 0.8\", \"<= 500\"], \"model\": \"RT-DETR-L\"}": 0.1
+        }
+      },
+      "reasoning": "Adaptive Duration (Sec. III.B.2): reusing RT-DETR-L from the last reevaluation (8 frame(s) of duration remaining before this one; S_hat_t=0.366). RL memory suggests deploying RT-DETR-L in this Snow/Downtown scene (D≈0.680, C≈8.000). Executed RT-DETR-L: confidence=0.820, latency=114.9ms, reward=1.00."
+    },
+    "tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "time_sec": 0.0
+  }
+}

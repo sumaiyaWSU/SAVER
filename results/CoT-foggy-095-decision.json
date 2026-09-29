@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "image": "foggy-095.jpg",
+    "model": "qwen2.5-7b",
+    "timestamp": "2025-10-16 13:31:07",
+    "duration": {
+      "reused_previous_decision": false,
+      "similarity_S_hat_t": 0.0,
+      "remaining_duration_after_this_frame": 0,
+      "C_max_seen": 0.0
+    }
+  },
+  "step1_scene_context_extraction": {
+    "raw": "```json\n{\n  \"environment\": {\n    \"weather\": \"fog\",\n    \"time\": \"day\",\n    \"road\": \"rural road\",\n    \"lane\": \"two-lane\"\n  },\n  \"critical_objects\": []\n}\n```",
+    "json": {
+      "environment": {
+        "weather": "fog",
+        "time": "day",
+        "road": "rural road",
+        "lane": "two-lane"
+      },
+      "critical_objects": []
+    },
+    "tokens": {
+      "input": 2177,
+      "output": 53
+    },
+    "time_sec": 1.05119228363037
+  },
+  "step2_scene_context_scoring": {
+    "raw": "```json\n{\n  \"difficulty\": {\n    \"picked\": {\n      \"ww\": 0.4,\n      \"wt\": 0.1,\n      \"wr\": 0.4,\n      \"wl\": 0.1,\n      \"Ew\": 0.6,\n      \"Et\": 0.3,\n      \"Er\": 0.45,\n      \"El\": 0.2\n    },\n    \"weights\": {\n      \"ww\": 0.4,\n      \"wt\": 0.1,\n      \"wr\": 0.4,\n      \"wl\": 0.1\n    },\n    \"terms\": {\n      \"ww_times_Ew\": 0.24,\n      \"wt_times_Et\": 0.03,\n      \"wr_times_Er\": 0.18,\n      \"wl_times_El\": 0.02\n    },\n    \"D\": 0.47,\n    \"calculation\": \"D = ww*Ew + wt*Et + wr*Er + wl*El = 0.240000 + 0.030000 + 0.180000 + 0.020000 = 0.470000\",\n    \"notes\": \"Fog significantly reduces visibility, increasing difficulty.\"\n  },\n  \"complexity\": {\n    \"per_object\": [],\n    \"N\": 0,\n    \"sum_p\": 0.0,\n    \"alpha\": 1.0,\n    \"beta\": 1.0,\n    \"terms\": {\n      \"alpha_times_N\": 0.0,\n      \"beta_times_sum_p\": 0.0\n    },\n    \"C\": 0.0,\n    \"calculation\": \"C = alpha*N + beta*sum_p = 1.0*0 + 1.0*0.000000 = 0.000000 + 0.000000 = 0.000000\"\n  },\n  \"reasoning\": \"The foggy weather conditions reduce visibility, making it challenging to navigate safely. There are no critical objects present, so the complexity score remains low.\"\n}\n```",
+    "json": {
+      "difficulty": {
+        "picked": {
+          "ww": 0.4,
+          "wt": 0.1,
+          "wr": 0.4,
+          "wl": 0.1,
+          "Ew": 0.6,
+          "Et": 0.3,
+          "Er": 0.45,
+          "El": 0.2
+        },
+        "weights": {
+          "ww": 0.4,
+          "wt": 0.1,
+          "wr": 0.4,
+          "wl": 0.1
+        },
+        "terms": {
+          "ww_times_Ew": 0.24,
+          "wt_times_Et": 0.03,
+          "wr_times_Er": 0.18,
+          "wl_times_El": 0.02
+        },
+        "D": 0.47,
+        "calculation": "D = ww*Ew + wt*Et + wr*Er + wl*El = 0.470000 = 0.470000",
+        "notes": "Fog significantly reduces visibility, increasing difficulty."
+      },
+      "complexity": {
+        "per_object": [],
+        "N": 0,
+        "sum_p": 0.0,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "terms": {
+          "alpha_times_N": 0.0,
+          "beta_times_sum_p": 0.0
+        },
+        "C": 0.0,
+        "calculation": "C = alpha*N + beta*sum_p = 0.000000 = 0.000000 = 0.000000"
+      },
+      "reasoning": "The foggy weather conditions reduce visibility, making it challenging to navigate safely. There are no critical objects present, so the complexity score remains low."
+    },
+    "tokens": {
+      "input": 3538,
+      "output": 419
+    },
+    "time_sec": 1.7003033161163
+  },
+  "step3_scene_aware_decision": {
+    "raw": "--- Step 3 (1) Risk Assessment ---\n{\n  \"terms\": {\n    \"C_norm\": 0.0,\n    \"risk_D_term\": 0.282,\n    \"risk_C_term\": 0.0\n  },\n  \"R\": 0.282,\n  \"calculation\": \"R = 0.60*D + 0.40*C_norm = 0.282000 + 0.000000 = 0.282000\"\n}\n\n--- Step 3 (2)(1) Confidence Policy ---\n{\n  \"picked\": {\n    \"base_low\": 0.7,\n    \"base_high\": 0.75\n  },\n  \"terms\": {\n    \"conf_min_term\": 0.01128,\n    \"conf_max_term\": 0.00846\n  },\n  \"C_min\": 0.71128,\n  \"C_max\": 0.75846,\n  \"calculation\": \"C_min = base_low + 0.04*R = 0.700000 + 0.011280 = 0.711280; C_max = base_high + 0.03*R = 0.750000 + 0.008460 = 0.758460\"\n}\n\n--- Step 3 (2)(2) Latency Budget Policy ---\n{\n  \"picked\": {\n    \"L_min\": 200.0,\n    \"L_max\": 500.0\n  },\n  \"terms\": {\n    \"latency_range_term\": 84.6\n  },\n  \"L_budget_ms\": 284.6,\n  \"calculation\": \"L_budget_ms = L_min + (L_max-L_min)*R = 200.000000 + 84.600000 = 284.600000\"\n}\n\n--- Step 3 (3)+(4) Shortlist Candidates & Final Decision ---\n{\n  \"used_mode\": \"IN_BAND\",\n  \"shortlist_detail\": [\n    {\n      \"model\": \"DETR\",\n      \"latency\": 135.53,\n      \"mAP\": 0.71,\n      \"confidence\": 0.861\n    },\n    {\n      \"model\": \"Sparse-RCNN\",\n      \"latency\": 117.83,\n      \"mAP\": 0.686,\n      \"confidence\": 0.801\n    },\n    {\n      \"model\": \"RT-DETR-L\",\n      \"latency\": 62.9,\n      \"mAP\": 0.674,\n      \"confidence\": 0.719\n    }\n  ],\n  \"policy\": {\n    \"K\": 3,\n    \"candidates\": [\n      \"DETR\",\n      \"Sparse-RCNN\",\n      \"RT-DETR-L\"\n    ],\n    \"Final model\": \"DETR\"\n  },\n  \"reasoning\": \"DETR has the highest mAP (0.71) among the candidates that meet both the 284.6ms latency budget and the 0.71128 confidence requirement, so it is selected as the final model; Sparse-RCNN and RT-DETR-L are the next-best feasible candidates.\"\n}",
+    "json": {
+      "audit": {
+        "D": 0.47,
+        "C": 0.0,
+        "weather_key": "Foggy",
+        "scene_key": "Downtown",
+        "picked": {
+          "C_norm": 0.0,
+          "risk_D_term": 0.282,
+          "risk_C_term": 0.0,
+          "base_low": 0.7,
+          "base_high": 0.75,
+          "L_min": 200.0,
+          "L_max": 500.0
+        },
+        "terms": {
+          "C_norm": 0.0,
+          "risk_D_term": 0.282,
+          "risk_C_term": 0.0,
+          "conf_min_term": 0.01128,
+          "conf_max_term": 0.00846,
+          "latency_range_term": 84.6
+        },
+        "R": 0.282,
+        "C_min": 0.71128,
+        "C_max": 0.75846,
+        "L_budget_ms": 284.6,
+        "used_mode": "IN_BAND",
+        "shortlist_detail": [
+          {
+            "model": "DETR",
+            "latency": 135.53,
+            "mAP": 0.71,
+            "confidence": 0.861
+          },
+          {
+            "model": "Sparse-RCNN",
+            "latency": 117.83,
+            "mAP": 0.686,
+            "confidence": 0.801
+          },
+          {
+            "model": "RT-DETR-L",
+            "latency": 62.9,
+            "mAP": 0.674,
+            "confidence": 0.719
+          }
+        ]
+      },
+      "policy": {
+        "K": 3,
+        "candidates": [
+          "DETR",
+          "Sparse-RCNN",
+          "RT-DETR-L"
+        ],
+        "Final model": "DETR",
+        "_rl_signature": [
+          "Foggy",
+          "Downtown",
+          "<= 0.6",
+          "<= 1.0",
+          "<= 0.3",
+          "<= 0.72",
+          "<= 0.8",
+          "<= 500"
+        ],
+        "_execution": {
+          "model": "DETR",
+          "confidence": 0.8160149852434794,
+          "latency_ms": 912.5754833221436,
+          "reward": 0.0,
+          "latency_penalty": 1.1032598090691206,
+          "num_detections": 6,
+          "backend": "transformers",
+          "device": "cuda",
+          "learned_confidence_profile": 0.8160149852434794,
+          "annotated_frame": "output_frames/foggy-095_DETR.jpg"
+        },
+        "_rl_debug_Q": {
+          "{\"sig\": [\"Foggy\", \"Downtown\", \"<= 0.6\", \"<= 1.0\", \"<= 0.3\", \"<= 0.72\", \"<= 0.8\", \"<= 500\"], \"model\": \"DETR\"}": -0.11032598090691206,
+          "{\"sig\": [\"Foggy\", \"Downtown\", \"<= 0.6\", \"<= 1.0\", \"<= 0.3\", \"<= 0.72\", \"<= 0.8\", \"<= 500\"], \"model\": \"Sparse-RCNN\"}": 0.0,
+          "{\"sig\": [\"Foggy\", \"Downtown\", \"<= 0.6\", \"<= 1.0\", \"<= 0.3\", \"<= 0.72\", \"<= 0.8\", \"<= 500\"], \"model\": \"RT-DETR-L\"}": 0.0
+        }
+      },
+      "reasoning": "DETR has the highest mAP (0.71) among the candidates that meet both the 284.6ms latency budget and the 0.71128 confidence requirement, so it is selected as the final model; Sparse-RCNN and RT-DETR-L are the next-best feasible candidates. RL memory suggests deploying DETR in this Foggy/Downtown scene (D≈0.470, C≈0.000). Executed DETR: confidence=0.816, latency=912.6ms, reward=0.00."
+    },
+    "tokens": {
+      "input": 3910,
+      "output": 372
+    },
+    "time_sec": 1.5238201618194
+  }
+}

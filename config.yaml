@@ -1,0 +1,22 @@
+
+api_keys:
+  openai: ""
+  anthropic: ""
+  gemini: ""
+
+  huggingface: ""
+
+model_path:
+  huggingface: "/home/sumaiya/vllm/practice/SAVER"
+
+
+data:
+  root: "/home/sumaiya/vllm/LightEMMA/data/nuscenes"
+  version: "v1.0-mini"
+  results: "results"
+
+
+prediction:
+  obs_len: 6
+  fut_len: 6
+  ext_len: 2

@@ -1,0 +1,11 @@
+{
+  "_comment": "Optional: point any backend at your own locally-downloaded weights (e.g. from each detector own GitHub repo/releases) instead of the built-in torchvision/HF-Hub/ultralytics auto-download default. Map model name -> local path (or an alternate HF Hub repo id for the transformers backends: DETR, Deformable DETR (R50), RT-DETR-L). Leave a model out entirely to keep using its built-in default. Copy this file to detector_checkpoint_overrides.json (or point SAVER_DETECTOR_CHECKPOINTS at your own path) once filled in.",
+  "Faster-RCNN": null,
+  "Mask-RCNN": null,
+  "DETR": null,
+  "Deformable DETR (R50)": null,
+  "RT-DETR-L": null,
+  "YOLOv11(Large)": null,
+  "Sparse-RCNN": null,
+  "DINO": null
+}
