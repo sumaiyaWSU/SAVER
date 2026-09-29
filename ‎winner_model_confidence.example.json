@@ -1,0 +1,179 @@
+{
+  "_comment": "Optional real per-model confidence priors for Shortlist Candidates (paper Sec III.B). Fill in actual offline-profiled mean detection confidence for each (model, weather, scene) cell below. Leave a cell as null (or delete it) if you have not profiled it; the code treats null as no data and skips the confidence test for that row rather than assuming a value. Copy this file to winner_model_confidence.json (or point SAVER_CONFIDENCE_OVERRIDES at your own path) once filled in. See the reference (winner_model_confidence.json) for the expected format.",
+  "DINO": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "RT-DETR-L": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "Sparse-RCNN": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "DETR": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "Faster-RCNN": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "Mask-RCNN": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "YOLOv11(Large)": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  },
+  "Deformable DETR (R50)": {
+    "Sunny": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Snow": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Rainy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Foggy": {
+      "Highway": null,
+      "Downtown": null
+    },
+    "Sand": {
+      "Highway": null,
+      "Downtown": null
+    }
+  }
+}
