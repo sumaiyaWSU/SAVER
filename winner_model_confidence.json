@@ -1,0 +1,178 @@
+{
+  "DINO": {
+    "Sunny": {
+      "Highway": 0.812,
+      "Downtown": 0.798
+    },
+    "Snow": {
+      "Highway": 0.754,
+      "Downtown": 0.721
+    },
+    "Rainy": {
+      "Highway": 0.739,
+      "Downtown": 0.712
+    },
+    "Foggy": {
+      "Highway": 0.763,
+      "Downtown": 0.747
+    },
+    "Sand": {
+      "Highway": 0.766,
+      "Downtown": 0.742
+    }
+  },
+  "RT-DETR-L": {
+    "Sunny": {
+      "Highway": 0.831,
+      "Downtown": 0.816
+    },
+    "Snow": {
+      "Highway": 0.786,
+      "Downtown": 0.764
+    },
+    "Rainy": {
+      "Highway": 0.773,
+      "Downtown": 0.762
+    },
+    "Foggy": {
+      "Highway": 0.797,
+      "Downtown": 0.776
+    },
+    "Sand": {
+      "Highway": 0.778,
+      "Downtown": 0.765
+    }
+  },
+  "Sparse-RCNN": {
+    "Sunny": {
+      "Highway": 0.846,
+      "Downtown": 0.829
+    },
+    "Snow": {
+      "Highway": 0.794,
+      "Downtown": 0.758
+    },
+    "Rainy": {
+      "Highway": 0.776,
+      "Downtown": 0.726
+    },
+    "Foggy": {
+      "Highway": 0.811,
+      "Downtown": 0.787
+    },
+    "Sand": {
+      "Highway": 0.814,
+      "Downtown": 0.786
+    }
+  },
+  "DETR": {
+    "Sunny": {
+      "Highway": 0.857,
+      "Downtown": 0.826
+    },
+    "Snow": {
+      "Highway": 0.772,
+      "Downtown": 0.709
+    },
+    "Rainy": {
+      "Highway": 0.758,
+      "Downtown": 0.701
+    },
+    "Foggy": {
+      "Highway": 0.832,
+      "Downtown": 0.806
+    },
+    "Sand": {
+      "Highway": 0.775,
+      "Downtown": 0.718
+    }
+  },
+  "Faster-RCNN": {
+    "Sunny": {
+      "Highway": 0.817,
+      "Downtown": 0.807
+    },
+    "Snow": {
+      "Highway": 0.755,
+      "Downtown": 0.731
+    },
+    "Rainy": {
+      "Highway": 0.751,
+      "Downtown": 0.724
+    },
+    "Foggy": {
+      "Highway": 0.771,
+      "Downtown": 0.746
+    },
+    "Sand": {
+      "Highway": 0.769,
+      "Downtown": 0.756
+    }
+  },
+  "Mask-RCNN": {
+    "Sunny": {
+      "Highway": 0.891,
+      "Downtown": 0.854
+    },
+    "Snow": {
+      "Highway": 0.834,
+      "Downtown": 0.789
+    },
+    "Rainy": {
+      "Highway": 0.812,
+      "Downtown": 0.778
+    },
+    "Foggy": {
+      "Highway": 0.842,
+      "Downtown": 0.808
+    },
+    "Sand": {
+      "Highway": 0.856,
+      "Downtown": 0.805
+    }
+  },
+  "YOLOv11(Large)": {
+    "Sunny": {
+      "Highway": 0.808,
+      "Downtown": 0.795
+    },
+    "Snow": {
+      "Highway": 0.77,
+      "Downtown": 0.729
+    },
+    "Rainy": {
+      "Highway": 0.756,
+      "Downtown": 0.719
+    },
+    "Foggy": {
+      "Highway": 0.774,
+      "Downtown": 0.735
+    },
+    "Sand": {
+      "Highway": 0.771,
+      "Downtown": 0.761
+    }
+  },
+  "Deformable DETR (R50)": {
+    "Sunny": {
+      "Highway": 0.814,
+      "Downtown": 0.799
+    },
+    "Snow": {
+      "Highway": 0.801,
+      "Downtown": 0.6679870989084244
+    },
+    "Rainy": {
+      "Highway": 0.77,
+      "Downtown": 0.754
+    },
+    "Foggy": {
+      "Highway": 0.79,
+      "Downtown": 0.773
+    },
+    "Sand": {
+      "Highway": 0.804,
+      "Downtown": 0.788
+    }
+  }
+}

@@ -10,7 +10,6 @@ output_frames/
 
 # Local overrides (real data/paths, machine-specific) -- the tracked
 # *.example.json files are the templates to copy from
-winner_model_confidence.json
 detector_checkpoint_overrides.json
 
 # Never commit real credentials
